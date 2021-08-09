@@ -466,7 +466,7 @@ void process_ep3_server_data_request(shared_ptr<ServerState> s, shared_ptr<Clien
     case 0x41:
       send_ep3_map_data(l, cmds[4].dword);
       break;
-    /*// phase 2: deck/name entry
+    // phase 2: deck/name entry
     case 0x13:
       ti = FindTeam(s, c->teamID);
       memcpy(&ti->ep3game, ((DWORD)c->bufferin + 0x14), 0x2AC);
@@ -523,7 +523,7 @@ void process_ep3_server_data_request(shared_ptr<ServerState> s, shared_ptr<Clien
       CommandEp3InitSendMapLayout(s, c);
       CommandEp3Init_B4_39(s, c); // MISSING: 60 00 AC 00 B4 2A 00 00 39 56 00 08 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
       CommandEp3InitBegin(s, c);
-      break; */
+      break; 
     default:
       log(WARNING, "unknown Ep3 server data request: %02X", cmds[1].byte[0]);
   }
